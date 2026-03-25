@@ -1,1 +1,184 @@
-:root{--p:#A8FF3E;--bg:#0D0D0D;--s:#161618;--t:#FFF;--ts:#9CA3AF}body{background:var(--bg);color:var(--t);font-family:'DM Sans',sans-serif}h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-weight:800}h1{font-size:2.5rem}h2{font-size:1.8rem}a{color:var(--p)}a:hover{color:var(--t)}button,.button{background:var(--p);color:#000;font-weight:700;border:0;padding:10px 20px;cursor:pointer}.button:hover{background:var(--t)}.product-card{background:var(--s);border:1px solid rgba(255,255,255,.08)}.product-card:hover{border-color:var(--p);box-shadow:0 0 20px rgba(168,255,62,.15)}.product-card__image{aspect-ratio:4/3;overflow:hidden}.product-card__image img{width:100%;object-fit:cover;filter:brightness(.85)}.product-card:hover img{transform:scale(1.05)}.product-card__price{display:flex;gap:8px;border-top:1px solid rgba(255,255,255,.06);padding-top:10px}.product-card__price-current{font-weight:900}input,textarea,select{background:var(--s);border:1px solid rgba(255,255,255,.08);color:var(--t);padding:8px}input:focus,textarea:focus{border-color:var(--p)}nav{background:var(--s);border-bottom:1px solid rgba(255,255,255,.08)}nav a{color:var(--ts);padding:10px 15px;display:inline-block}nav a:hover{color:var(--p)}.container{max-width:1280px;padding:0 20px}section{padding:40px 20px}.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}@media(max-width:768px){h1{font-size:1.5rem}section{padding:30px 15px}.grid{grid-template-columns:1fr}button{width:98}}
+/* ============================================
+   Shopify Theme Stylesheet
+   ============================================ */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&family=DM+Sans:wght@400;700&display=swap');
+
+/* ============================================
+   CSS Custom Properties
+   ============================================ */
+:root {
+  --p: #A8FF3E;
+  --bg: #0D0D0D;
+  --s: #161618;
+  --t: #FFF;
+  --ts: #9CA3AF;
+}
+
+/* ============================================
+   Base / Reset
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--t);
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+h1,
+h2,
+h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+
+a {
+  color: var(--p);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover { color: var(--t); }
+
+/* ============================================
+   Buttons
+   ============================================ */
+button,
+.button {
+  background: var(--p);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+button:hover,
+.button:hover {
+  background: var(--t);
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+nav {
+  background: var(--s);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+nav a {
+  color: var(--ts);
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+nav a:hover { color: var(--p); }
+
+/* ============================================
+   Layout
+   ============================================ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ============================================
+   Product Card
+   ============================================ */
+.product-card {
+  background: var(--s);
+  border: 1px solid rgba(255, 255, 255, .08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  border-color: var(--p);
+  box-shadow: 0 0 20px rgba(168, 255, 62, .15);
+}
+
+.product-card__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.product-card__image img {
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(.85);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card__price {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+  padding-top: 10px;
+}
+
+.product-card__price-current {
+  font-weight: 900;
+}
+
+/* ============================================
+   Forms
+   ============================================ */
+input,
+textarea,
+select {
+  background: var(--s);
+  border: 1px solid rgba(255, 255, 255, .08);
+  color: var(--t);
+  padding: 8px;
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--p);
+  outline: none;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  h1 { font-size: 1.5rem; }
+
+  section { padding: 30px 15px; }
+
+  .grid { grid-template-columns: 1fr; }
+
+  button { width: 100%; }
+}
